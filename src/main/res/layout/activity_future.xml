@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header with Left Arrow -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <!-- Left Arrow Icon -->
+            <ImageView
+                android:id="@+id/backbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:srcCompat="@drawable/back" />
+
+        </RelativeLayout>
+
+        <!-- Weather Info Card -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/background2"
+            android:elevation="4dp"
+            android:padding="16dp">
+
+            <!-- Tomorrow Heading -->
+
+            <!-- Weather Icon -->
+            <TextView
+                android:id="@+id/tvTomorrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Tomorrow"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.43"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageViewWeather"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="Weather Icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTomorrow"
+                app:srcCompat="@drawable/cloudy_sunny" />
+
+            <!-- Temperature -->
+            <TextView
+                android:id="@+id/tvTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="25°"
+                android:textColor="@android:color/white"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/imageViewWeather"
+                app:layout_constraintTop_toTopOf="@id/imageViewWeather" />
+
+            <!-- Weather Condition -->
+            <TextView
+                android:id="@+id/tvCondition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Mostly Cloudy"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/imageViewWeather"
+                app:layout_constraintTop_toBottomOf="@id/tvTemperature" />
+
+            <!-- Weather Attributes -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewWeather">
+
+                <!-- Rain -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:contentDescription="Rain Icon"
+                        app:srcCompat="@drawable/rain" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="22%"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rain"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- Wind Speed -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:contentDescription="Wind Speed Icon"
+                        app:srcCompat="@drawable/windy" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="12 km/h"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wind Speed"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- Humidity -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:contentDescription="Humidity Icon"
+                        app:srcCompat="@drawable/humidity" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="18%"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Humidity"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- RecyclerView for hourly weather -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewHourlyWeather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            tools:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<ScrollView-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@drawable/background"-->
+<!--    android:padding="16dp">-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:padding="16dp">-->
+
+<!--        &lt;!&ndash; Header with Left Arrow &ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="16dp">-->
+
+<!--            &lt;!&ndash; Left Arrow Icon &ndash;&gt;-->
+
+<!--            &lt;!&ndash; Title or other Header Content &ndash;&gt;-->
+<!--            <ImageView-->
+<!--                android:id="@+id/backbtn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="16dp"-->
+<!--                app:srcCompat="@drawable/back" />-->
+
+<!--        </RelativeLayout>-->
+
+<!--        &lt;!&ndash; Weather Info Card &ndash;&gt;-->
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:background="@drawable/background2"-->
+<!--            android:elevation="4dp"-->
+<!--            android:padding="16dp">-->
+
+<!--            &lt;!&ndash; Weather Icon &ndash;&gt;-->
+<!--            <ImageView-->
+<!--                android:id="@+id/imageViewWeather"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:contentDescription="Weather Icon"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:srcCompat="@drawable/cloudy_sunny" />-->
+
+<!--            &lt;!&ndash; Temperature &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/tvTemperature"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:text="25°"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="32sp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintStart_toEndOf="@id/imageViewWeather"-->
+<!--                app:layout_constraintTop_toTopOf="@id/imageViewWeather" />-->
+
+<!--            &lt;!&ndash; Weather Condition &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/tvCondition"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:text="Mostly Cloudy"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="18sp"-->
+<!--                app:layout_constraintStart_toEndOf="@id/imageViewWeather"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/tvTemperature" />-->
+
+<!--            &lt;!&ndash; Weather Attributes &ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:gravity="center_horizontal"-->
+<!--                android:orientation="horizontal"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/imageViewWeather">-->
+
+<!--                &lt;!&ndash; Rain &ndash;&gt;-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="32dp"-->
+<!--                        android:layout_height="32dp"-->
+<!--                        android:contentDescription="Rain Icon"-->
+<!--                        app:srcCompat="@drawable/rain" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:text="22%"-->
+<!--                        android:textColor="@android:color/white"-->
+<!--                        android:textSize="14sp" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Rain"-->
+<!--                        android:textColor="@android:color/white"-->
+<!--                        android:textSize="12sp" />-->
+<!--                </LinearLayout>-->
+
+<!--                &lt;!&ndash; Wind Speed &ndash;&gt;-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="32dp"-->
+<!--                        android:layout_height="32dp"-->
+<!--                        android:contentDescription="Wind Speed Icon"-->
+<!--                        app:srcCompat="@drawable/windy" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:text="12 km/h"-->
+<!--                        android:textColor="@android:color/white"-->
+<!--                        android:textSize="14sp" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Wind Speed"-->
+<!--                        android:textColor="@android:color/white"-->
+<!--                        android:textSize="12sp" />-->
+<!--                </LinearLayout>-->
+
+<!--                &lt;!&ndash; Humidity &ndash;&gt;-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="32dp"-->
+<!--                        android:layout_height="32dp"-->
+<!--                        android:contentDescription="Humidity Icon"-->
+<!--                        app:srcCompat="@drawable/humidity" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:text="18%"-->
+<!--                        android:textColor="@android:color/white"-->
+<!--                        android:textSize="14sp" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Humidity"-->
+<!--                        android:textColor="@android:color/white"-->
+<!--                        android:textSize="12sp" />-->
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        &lt;!&ndash; RecyclerView for hourly weather &ndash;&gt;-->
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recyclerViewHourlyWeather"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:padding="8dp"-->
+<!--            tools:layout_marginTop="16dp" />-->
+<!--    </LinearLayout>-->
+<!--</ScrollView>-->
